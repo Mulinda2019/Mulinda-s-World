@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulinda's Biography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <style>
+        /* Global Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+            background-color: #032B44;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Biography Container */
+        .biography {
+            background-color: #032B44; /* Water blue background */
+            padding: 40px;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 1200px; /* Limit max width */
+            margin: 0 auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #87CEEB;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #87CEEB;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Image Row (Gallery) */
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-frame {
+            width: calc(25% - 10px);
+            height: 180px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #f1f1f1;
+            padding: 5px;
+            background-color: #333;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .image-frame {
+                width: calc(50% - 10px);
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-frame {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="biography">
+        <h1>Mulinda Israel Negondeni</h1>
+
+        <div class="image-row">
+            <figure class="image-frame">
+                <figcaption>Mulinda, 2023</figcaption>
+                <img src="static/pictures/profilepic.jpg" alt="Mulinda Israel Negondeni, 2023" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Mulinda, 2024</figcaption>
+                <img src="static/pictures/picture1.jpg" alt="Mulinda Israel Negondeni, 2024" loading="lazy">
+            </figure>
+        </div>
+
+        <p>Mulinda Negondeni was born on May 14, 2002, in Ha-Mabila village, to the late Mr Thizwilondi Israel Negondeni and Mrs Gloria Takalani Negondeni. He is the youngest of four children.</p>
+
+        <div class="image-row">
+            <figure class="image-frame">
+                <figcaption>Thizwilondi Israel Negondeni</figcaption>
+                <img src="static/pictures/daddy.jpg" alt="Thizwilondi Israel Negondeni, Mulinda's father" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Gloria Takalani Negondeni</figcaption>
+                <img src="static/pictures/mom.jpg" alt="Gloria Takalani Negondeni, Mulinda's mother" loading="lazy">
+            </figure>
+        </div>
+
+        <h2>Early Life and Education</h2>
+        <p>Mulinda began his educational journey at Mabila Primary School and later attended Matavhela Technical High School for secondary education.</p>
+        <p>From 2020 to 2023, he pursued a degree in Human Resource Management at the University of Venda (Univen).</p>
+
+        <div class="image-row">
+            <figure class="image-frame">
+                <figcaption>May, 2024</figcaption>
+                <img src="static/pictures/school1.jpg" alt="University of Venda graduation in May 2024" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Thohoyandou, 2020</figcaption>
+                <img src="static/pictures/school2.jpg" alt="Thohoyandou, first year of University of Venda, 2020" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Graduation Ceremony</figcaption>
+                <img src="static/pictures/school3.jpg" alt="University of Venda graduation ceremony" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Campus Life</figcaption>
+                <img src="static/pictures/school4.jpg" alt="Campus life at University of Venda" loading="lazy">
+            </figure>
+        </div>
+
+        <h2>Personal Life</h2>
+        <p>Mulinda is a devoted born-again Christian. He is blessed with a beautiful daughter, Avhonaho Precious Negondeni.</p>
+
+        <h2>Sports and Music</h2>
+        <p>Mulinda has a passion for sports, particularly football (soccer), where he has won numerous individual and collective medals and trophies. Additionally, he has participated in athletics, earning three marathon medals.</p>
+        <p>Music plays a significant role in his life. He started playing musical instruments at the age of 7 and specializes in piano, drums, and bass guitar.</p>
+
+        <div class="image-row">
+            <figure class="image-frame">
+                <figcaption>Ngalavhani Brave Lions FC, 2022</figcaption>
+                <img src="static/pictures/sports1.jpg" alt="Mulinda playing football with Ngalavhani Brave Lions FC in 2022" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>HHHH FC, Univen</figcaption>
+                <img src="static/pictures/school3.jpg" alt="Mulinda playing for HHHH FC at University of Venda" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Sports Event</figcaption>
+                <img src="static/pictures/sports2.jpg" alt="Mulinda participating in sports event" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Running Marathon</figcaption>
+                <img src="static/pictures/sports3.jpg" alt="Mulinda running in marathon event" loading="lazy">
+            </figure>
+        </div>
+
+        <h2>Entrepreneurial Ventures</h2>
+        <p>Mulinda founded Israel Izzy Maintenance, a house painting and yard cleaning business.</p>
+
+        <div class="image-row">
+            <figure class="image-frame">
+                <figcaption>Founded, 2020</figcaption>
+                <img src="static/pictures/work1.jpg" alt="Israel Izzy Maintenance business founded in 2020" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Painting project, 2021</figcaption>
+                <img src="static/pictures/work2.jpg" alt="Painting project by Israel Izzy Maintenance in 2021" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Business Growth</figcaption>
+                <img src="static/pictures/work3.jpg" alt="Growth of Israel Izzy Maintenance business" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Completed Projects</figcaption>
+                <img src="static/pictures/work4.jpg" alt="Completed projects by Israel Izzy Maintenance" loading="lazy">
+            </figure>
+        </div>
+
+        <h2>Technical Pursuits</h2>
+        <p>Currently, Mulinda is exploring the field of Computer Science, with expertise in:</p>
+        <ul>
+            <li>Web development (HTML, CSS, JavaScript)</li>
+            <li>Web applications (Python Teacher, Pyguider)</li>
+            <li>Data Science and Analytics</li>
+            <li>App Development</li>
+            <li>Machine Learning</li>
+        </ul>
+
+        <div class="image-row">
+            <figure class="image-frame">
+                <figcaption>Web Development</figcaption>
+                <img src="static/pictures/project1.png" alt="Web development project" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>App Development</figcaption>
+                <img src="static/pictures/project2.jpg" alt="App development project" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Data Science</figcaption>
+                <img src="static/pictures/project3.jpg" alt="Data science project" loading="lazy">
+            </figure>
+            <figure class="image-frame">
+                <figcaption>Machine Learning</figcaption>
+                <img src="static/pictures/project4.jpg" alt="Machine learning project" loading="lazy">
+            </figure>
+        </div>
+
+        <h2>Future Aspirations</h2>
+        <p>Mulinda aims to continue making significant contributions to the tech industry, inspiring others through his work, and fostering a community of innovators.</p>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Lightbox Image">
+    </div>
+
+    <script>
+        // Lightbox functionality using event delegation
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        document.querySelector('.biography').addEventListener('click', (event) => {
+            if (event.target.closest('.image-frame')) {
+                const img = event.target.closest('.image-frame').querySelector('img');
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            }
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>

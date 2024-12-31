@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Mulinda's World. Explore projects, biography, education, and more.">
+  <meta name="author" content="Mulinda Israel Negondeni">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mulinda's World</title>
+  
+  <!-- External CSS library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <!-- Inline minimized CSS -->
+ <!-- Inline minimized CSS -->
+<style>
+  body{background-color:#000;font-family:Arial,sans-serif;color:#fff;margin:0;padding:0;overflow-x:hidden}
+  .title{position:absolute;top:30px;left:50%;transform:translateX(-50%);font-size:50px;font-weight:bold;color:hsl(205,58%,46%);text-align:center;z-index:1}
+  #nav-bar{z-index:1000;position:fixed;top:-300px;left:0;background-color:#333;padding:20px;width:80%;max-width:250px;transition:top .3s ease-in-out}
+  #nav-bar ul{list-style:none;padding:0;margin:0}
+  #nav-bar li{margin-bottom:10px}
+  #nav-bar a{text-decoration:none;color:rgb(128, 255, 0);transition:color .3s}
+  #nav-bar a:hover{color:#3e6a12}
+  #nav-bar i{font-size:16px;margin-right:10px;color:rgb(128, 255, 0)}
+  .dropdown-btn{position:fixed;top:10px;right:10px;background-color:#333;color:rgb(128, 255, 0);padding:10px;border:none;cursor:pointer;z-index:1}
+  .dropdown-btn:hover{background-color:#444;color:rgb(76, 119, 32)}
+  .dropdown-btn i{color:rgb(128, 255, 0)}
+  .section{padding:50px 0;width:100vw;margin:0 auto;box-sizing:border-box}
+  .animation-container{position:relative;height:10vh;background-color:#000}
+  .cosmic-clouds{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1000px;height:10px;background-color:hsla(317,90%,24%,.502);border-radius:50px;animation:drift 60s infinite}
+  @keyframes drift{0%{left:0}50%{left:100%}100%{left:0}}
+  #footer{width:100%;padding:20px;background-color:hsl(164,81%,10%);box-sizing:border-box;border-radius:10px;box-shadow:0 0 10px floralwhite;text-align:center;position:relative}
+  @media(max-width:768px){.title{font-size:30px}#nav-bar{top:-200px}.section{padding:30px 10px}#footer{font-size:18px}}
+  </style>
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://kit.fontawesome.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com https://kit.fontawesome.com 'unsafe-inline'; font-src 'self' https://cdnjs.cloudflare.com https://kit.fontawesome.com;">
+</head>
+
+<body>
+  <!-- Dropdown Button -->
+  <button class="dropdown-btn" onclick="toggleNavBar()">
+    <i class="fas fa-bars"></i> Menu
+  </button>
+
+  <!-- Navigation Bar -->
+  <div id="nav-bar" role="navigation" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#projects"><i class="fas fa-folder"></i> Projects</a></li>
+      <li><a href="#future-projects"><i class="fas fa-clock"></i> Future Projects</a></li>
+      <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="#biography"><i class="fas fa-user"></i> Biography</a></li>
+      <li><a href="#footer"><i class="fas fa-phone"></i> Contacts</a></li>
+    </ul>
+  </div>
+
+  <!-- Sections -->
+  <div class="section" id="home">{% include 'home.html' %}</div>
+  <div class="animation-container"><div class="cosmic-clouds"></div></div>
+  <div class="section" id="projects">{% include 'projects.html' %}</div>
+  <div class="animation-container"><div class="cosmic-clouds"></div></div>
+  <div class="section" id="future-projects">{% include 'future-projects.html' %}</div>
+  <div class="animation-container"><div class="cosmic-clouds"></div></div>
+  <div class="section" id="education">{% include 'educational-background.html' %}</div>
+  <div class="animation-container"><div class="cosmic-clouds"></div></div>
+  <div class="section" id="biography">{% include 'biography.html' %}</div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <ul>
+      <li>{% include 'contacts.html' %}</li>
+    </ul>
+    <ul>
+      <li>
+        <button style="background-color: #2863B7; color: white; padding: 10px 20px; border-radius: 5px;" onclick="togglePrivacyPolicy()">Privacy Policy</button>
+        <div id="privacy-policy" style="display: none;">{% include 'private-policy.html' %}</div>
+      </li>
+    </ul>
+    <p>&copy; 2024 Mulinda Israel Negondeni. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Navigation Bar Toggle (minimized) -->
+  <script>
+    // Toggle Navbar visibility
+    function toggleNavBar() {
+      const navBar = document.getElementById("nav-bar");
+      if (navBar.style.top === "-300px") {
+        navBar.style.top = "0"; // Show navbar
+      } else {
+        navBar.style.top = "-300px"; // Hide navbar
+      }
+    }
+
+    // Close Navbar when clicking outside
+    document.addEventListener("click", function(event) {
+      const navBar = document.getElementById("nav-bar");
+      const dropdownBtn = document.querySelector(".dropdown-btn");
+      if (!navBar.contains(event.target) && event.target !== dropdownBtn) {
+        navBar.style.top = "-300px"; // Hide navbar if click outside
+      }
+    });
+
+    // Toggle Privacy Policy Visibility
+    function togglePrivacyPolicy() {
+      const privacyPolicy = document.getElementById("privacy-policy");
+      privacyPolicy.style.display = privacyPolicy.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
