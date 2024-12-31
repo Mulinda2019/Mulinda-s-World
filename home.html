@@ -1,158 +1,130 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal website of Mulinda Israel Negondeni. Learn about my projects, expertise, and experience in technology and computer science.">
-  <meta name="author" content="Mulinda Israel Negondeni">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Mulinda's World</title>
-  <style>
-    /* Global Styles */
-    body {
-      background-color: #000;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
+<style>
+  /* Global Styles */
+  .welcome-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: hsl(205, 58%, 46%);
+    text-align: center;
+    margin-bottom: 30px; /* Adds space between title and profile picture */
+    z-index: 2; /* Title is above the stars and profile picture */
+  }
+
+  /* Profile Section */
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    padding-top: 20px; /* Moves everything down */
+  }
+
+  /* Profile Picture Styles */
+  .profile-picture {
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 2px solid #125487;
+    background-size: cover;
+    background-position: center;
+    background-image: url('pictures/profilepic.jpg');
+    position: relative;
+    z-index: 2; /* Profile picture is above the stars */
+  }
+
+  /* Star Animation */
+  .star-container {
+    position: absolute;
+    top: -10%;  /* Moves stars below the profile picture */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100px;  /* Space for the stars */
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    z-index: 1000; /* Stars are in the background */
+  }
+
+  .star {
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 74%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 2s infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scale(1);
     }
-
-    /* Title Styles */
-    .welcome-title {
-      font-size: 50px;
-      font-weight: bold;
-      color: hsl(205, 58%, 46%);
-      text-align: center;
-      margin-bottom: 30px; /* Adds space between title and profile picture */
-      z-index: 2; /* Title is above the stars and profile picture */
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
     }
+  }
 
-    /* Profile Section */
-    .profile-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      height: 100vh;
-      padding-top: 20px; /* Moves everything down */
-    }
+  /* About Me Section */
+  .profile-info {
+    background-color: #032B44;
+    padding: 25px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 30px;
+  }
 
-    /* Profile Picture Styles */
-    .profile-picture {
-      width: 550px;
-      height: 550px;
-      border-radius: 50%;
-      border: 2px solid #125487;
-      background-size: cover;
-      background-position: center;
-      background-image: url('pictures/profilepic.jpg');
-      position: relative;
-      z-index: 2; /* Profile picture is above the stars */
-    }
+  .profile-info p {
+    line-height: 1.6;
+  }
 
-    /* Star Animation */
-    .star-container {
-      position: absolute;
-      top: -10%;  /* Moves stars below the profile picture */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 100px;  /* Space for the stars */
-      pointer-events: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      z-index: 1000; /* Stars are in the background */
-    }
+  /* Call-to-Action Section */
+  .call-to-action {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background-color: hsl(164, 81%, 10%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 30px auto;
+    width: 80%;
+  }
+</style>
 
-    .star {
-      width: 10px;
-      height: 10px;
-      background-color: #FFD700;
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 74%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-      animation: twinkle 2s infinite;
-    }
+<!-- Title -->
+<div class="welcome-title">Welcome to Mulinda's World</div>
 
-    @keyframes twinkle {
-      0%, 100% {
-        opacity: 0.5;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.5);
-      }
-    }
+<!-- Profile Section with Stars -->
+<header class="profile-header">
+  <!-- Profile Picture -->
+  <div class="profile-picture" aria-label="Profile Picture"></div>
+  <!-- Star container moved below the profile picture -->
+  <div class="star-container">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+</header>
 
-    /* About Me Section */
-    .profile-info {
-      background-color: #032B44;
-      padding: 25px;
-      text-align: center;
-      font-size: 1rem;
-      margin-top: 30px;
-    }
+<!-- About Me Section -->
+<section class="profile-info">
+  <h1><b>About Me</b></h1>
+  <p>
+    Mulinda Israel Negondeni is a driven and ambitious individual passionate about computer science. With a keen interest in data analysis, machine learning, website and web application development, and mobile app development, I'm constantly seeking innovative ways to leverage technology. I possess a unique blend of expertise and creativity, driving me to push boundaries and achieve excellence.
+  </p>
+</section>
 
-    .profile-info p {
-      line-height: 1.6;
-    }
-
-    /* Call-to-Action Section */
-    .call-to-action {
-      text-align: center;
-      font-size: 1.2rem;
-      line-height: 1.5;
-      background-color: hsl(164, 81%, 10%);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      margin: 30px auto;
-      width: 80%;
-    }
-
-  </style>
-</head>
-<body>
-  <!-- Title -->
-  <div class="welcome-title">Welcome to Mulinda's World</div>
-
-  <!-- Profile Section with Stars -->
-  <header class="profile-header">
-    <!-- Profile Picture -->
-    <div class="profile-picture" aria-label="Profile Picture"></div>
-    <!-- Star container moved below the profile picture -->
-    <div class="star-container">
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-    </div>
-  </header>
-
-  <!-- About Me Section -->
-  <section class="profile-info">
-    <h1><b>About Me</b></h1>
-    <p>
-      Mulinda Israel Negondeni is a driven and ambitious individual passionate about computer science. With a keen interest in data analysis, machine learning, website and web application development, and mobile app development, I'm constantly seeking innovative ways to leverage technology. I possess a unique blend of expertise and creativity, driving me to push boundaries and achieve excellence.
-    </p>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="call-to-action">
-    <p>Explore my website to discover more about my projects, expertise, and experience.</p>
-  </section>
-
-  <!-- JavaScript for future features (currently not needed) -->
-  <script>
-    // No toggle bar, so no JavaScript needed for now
-  </script>
-</body>
-</html>
+<!-- Call to Action Section -->
+<section class="call-to-action">
+  <p>Explore my website to discover more about my projects, expertise, and experience.</p>
+</section>
