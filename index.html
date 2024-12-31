@@ -56,44 +56,18 @@
   </div>
 
   <!-- Sections -->
-  <!-- Home Section -->
+  <!-- Sections -->
 <div class="section" id="home">
-  <!-- Load home.html content using HTML object tag -->
-  <object data="home.html" type="text/html"></object>
+  <div id="home-content"></div>
 </div>
-<!-- Cosmic Clouds Animation -->
 <div class="animation-container"><div class="cosmic-clouds"></div></div>
-
-<!-- Projects Section -->
 <div class="section" id="projects">
-  <!-- Load projects.html content using HTML object tag -->
-  <object data="projects.html" type="text/html"></object>
+  <div id="projects-content"></div>
 </div>
-<!-- Cosmic Clouds Animation -->
 <div class="animation-container"><div class="cosmic-clouds"></div></div>
-
-<!-- Future Projects Section -->
 <div class="section" id="future-projects">
-  <!-- Load future-projects.html content using HTML object tag -->
-  <object data="future-projects.html" type="text/html"></object>
+  <div id="future-projects-content"></div>
 </div>
-<!-- Cosmic Clouds Animation -->
-<div class="animation-container"><div class="cosmic-clouds"></div></div>
-
-<!-- Education Section -->
-<div class="section" id="education">
-  <!-- Load educational-background.html content using HTML object tag -->
-  <object data="educational-background.html" type="text/html"></object>
-</div>
-<!-- Cosmic Clouds Animation -->
-<div class="animation-container"><div class="cosmic-clouds"></div></div>
-
-<!-- Biography Section -->
-<div class="section" id="biography">
-  <!-- Load biography.html content using HTML object tag -->
-  <object data="biography.html" type="text/html"></object>
-</div>
-
   <!-- Footer -->
 <footer id="footer">
   <ul>
@@ -141,6 +115,21 @@
       const privacyPolicy = document.getElementById("privacy-policy");
       privacyPolicy.style.display = privacyPolicy.style.display === "block" ? "none" : "block";
     }
+
+    / Load content from HTML files
+  function loadContent(file, container) {
+    fetch(file)
+      .then(response => response.text())
+      .then(html => {
+        document.querySelector(container).innerHTML = html;
+      });
+  }
+
+  // Load content for each section
+  loadContent('home.html', '#home-content');
+  loadContent('projects.html', '#projects-content');
+  loadContent('future-projects.html', '#future-projects-content');
+  // ... (load content for each section)
   </script>
 </body>
 </html>
